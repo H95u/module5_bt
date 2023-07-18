@@ -8,6 +8,8 @@ function ProductManage() {
         new Product(3, "Red bull", 100),
     ]);
 
+    let [productList, setProductList] = useState(products);
+
     return (
         <>
             <div style={{float: "right"}}><input id={"search"} type={"text"}/>
@@ -23,7 +25,7 @@ function ProductManage() {
                 </tr>
                 </thead>
                 <tbody>
-                {products.map(item => (
+                {productList.map(item => (
                     <tr>
                         <td>{item.id}</td>
                         <td>{item.name}</td>
@@ -125,7 +127,7 @@ function ProductManage() {
         let productSearch = products.filter(value => {
             return value.name.toLowerCase().includes(search.toLowerCase())
         })
-        setProducts(productSearch);
+        setProductList(productSearch);
     }
 
     function deleteProduct(id) {
