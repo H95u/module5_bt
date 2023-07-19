@@ -1,5 +1,6 @@
 import {useState} from "react";
 import Product from "./Product";
+import './Product.css'
 
 function ProductManage() {
     const [products, setProducts] = useState([
@@ -7,6 +8,7 @@ function ProductManage() {
         new Product(2, "Sting", 100),
         new Product(3, "Red bull", 100),
     ]);
+
 
     let [productList, setProductList] = useState(products);
 
@@ -94,7 +96,7 @@ function ProductManage() {
         let name = document.getElementById("name").value;
         let price = document.getElementById("price").value;
         let product = new Product(id, name, price);
-        setProducts([...products, product]);
+        setProductList([...productList, product]);
     }
 
     function update() {
@@ -109,7 +111,7 @@ function ProductManage() {
             return item;
         });
 
-        setProducts(updatedProducts);
+        setProductList(updatedProducts);
     }
 
     function showUpdate(id) {
@@ -134,7 +136,7 @@ function ProductManage() {
         const confirmed = window.confirm("Sure?");
         if (confirmed) {
             let updatedProducts = products.filter(item => item.id !== id);
-            setProducts(updatedProducts);
+            setProductList(updatedProducts);
         }
     }
 
