@@ -96,7 +96,8 @@ function ProductManage() {
         let name = document.getElementById("name").value;
         let price = document.getElementById("price").value;
         let product = new Product(id, name, price);
-        setProductList([...productList, product]);
+        setProducts([...products, product]);
+        setProductList([...products]);
     }
 
     function update() {

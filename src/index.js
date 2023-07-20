@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import ProductManage from "./component/ProductManage";
+import ColorAndCar from "./component/ColorAndCar";
+import SignupForm from "./component/SignupForm";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <ProductManage/>
+        {/*<ProductManage/>*/}
+        {/*<ColorAndCar/>*/}
+        <SignupForm/>
     </React.StrictMode>
 );
 
